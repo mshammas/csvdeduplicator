@@ -1,0 +1,42 @@
+{
+  "name": "csvdeduplicator",
+  "displayName": "CSVDeduplicator",
+  "publisher": "shammas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mshammas/csvdeduplicator.git"
+  },
+  "description": "Remove duplicate rows from CSV based on specified columns",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "activationEvents": [
+    "onCommand:csvdeduplicator.deduplicate",
+    "onCommand:csvdeduplicator.listHeaders"
+  ],
+  "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "prepare": "npm run compile"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "@types/vscode": "^1.50.0",
+    "vscode-test": "^1.4.0"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "csvdeduplicator.deduplicate",
+        "title": "CSV Deduplicator: Deduplicate CSV"
+      },
+      {
+        "command": "csvdeduplicator.listHeaders",
+        "title": "CSV Deduplicator: List Headers"
+      }
+    ]
+  }
+}
